@@ -1,0 +1,85 @@
+{
+  "journals": [
+    {
+      "id": 1,
+      "slug": "aarav-burn-that-took-childhood",
+      "title": "Aarav – The Burn That Took His Childhood",
+      "content": "Aarav was only 9 when he began ragpicking at Delhi's Ghazipur landfill — a towering, toxic mountain of waste. Each morning, before sunrise, he wrapped strips of torn cloth around his feet to protect them from glass and needles, then hauled a sack nearly twice his size into the dump. On a humid August morning, as he climbed the trash heap looking for plastic bottles, his foot sank into a pocket of methane gas. In seconds, the garbage beneath him burst into flames. Aarav was thrown backward, screaming as the fire scorched his legs and back. Other ragpickers ran to him, throwing dirt and water to stop the flames. His skin peeled in blisters. He was carried down the garbage hill, unconscious. They took him to a nearby hospital, but without Aadhaar, money, or guardian signatures, he was refused care. His mother applied burnt turmeric and cooled his wounds with muddy water. Today, Aarav limps through the same dump, one leg partially fused at the knee, the scars still raw. He has never been to school. When asked what hurts the most, he said quietly, 'I don't dream anymore. I only survive.'",
+      "image": "/journal/9.jpeg",
+      "date": "2025-06-14",
+      "tags": ["childhood", "survival", "healthcare", "poverty"]
+    },
+    {
+      "id": 2,
+      "slug": "meena-girl-who-ate-from-garbage",
+      "title": "Meena – The Girl Who Ate from the Garbage",
+      "content": "Meena is only 11, but her eyes hold the weight of grief and hunger far beyond her years. She lives in a torn tarpaulin tent behind a lavish wedding venue in South Delhi, alone since her mother died coughing blood on a cold winter night — a victim of untreated tuberculosis. Her father had left them years ago, disappearing without a trace. Every evening, the air behind the banquet hall is filled with the aroma of leftover feasts. Meena waits patiently, hiding behind dumpsters, clutching a cracked plastic bowl. When guests leave, she rushes to scrape leftover food from paper plates dumped in garbage bags. Flies buzz around her face, but she doesn't flinch. One evening, a security guard spotted her and shouted, 'Get away, you dirty thief!' He threw a stone that hit her leg, leaving a bruise. Meena didn't cry. She returned later, under the cover of darkness, and quietly ate scraps next to stray dogs. A social worker once asked her why she risks it. She replied, 'If I don't eat garbage, I won't wake up tomorrow.' She dreams of a hot meal on a plate — not one half-eaten, not one thrown away.",
+      "image": "/journal/8.jpeg",
+      "date": "2025-06-14",
+      "tags": ["hunger", "orphan", "inequality", "resilience"]
+    },
+    {
+      "id": 3,
+      "slug": "rafi-buried-under-waste",
+      "title": "Rafi – Buried Under Waste",
+      "content": "Rafi was just 12 when he began working alongside his older sister, Najma, at Mumbai's massive Deonar dumping ground — a sprawling sea of rotting waste, smoke, and stray animals. Each day, they carried long hooks and sacks, climbing unstable mountains of garbage to collect scrap metal, glass, and plastic. One muggy monsoon afternoon, the sky turned gray and a drizzle soaked the garbage mounds. Rafi, soaked and shivering, bent down to collect a bundle of copper wires lodged between broken cans and syringes. Without warning, the softened ground beneath him gave way — a part of the mound collapsed like a deadly wave. Rafi vanished in seconds, swallowed under tons of wet, toxic debris. Najma screamed. 'Bhai, are you under this?' she cried, digging with bare hands, her nails breaking. Others tried to help, but no fire brigade came. No rescue team. No news vans. After nearly four hours, they pulled his lifeless body out — blue, crushed, with a twisted arm still holding the copper wire. The dump swallowed his name without a sound. No obituary. No justice. Najma still climbs those heaps alone, but now she avoids that spot. 'He still calls me in dreams,' she says. 'But I never see his face.'",
+      "image": "/journal/7.jpeg",
+      "date": "2025-06-14",
+      "tags": ["tragedy", "safety", "family", "loss"]
+    },
+    {
+      "id": 4,
+      "slug": "asha-acid-bottle",
+      "title": "Asha – The Acid Bottle",
+      "content": "Asha was 14 when everything changed in the blink of an eye. She worked at an industrial landfill on the outskirts of Kanpur, scouring the trash for recyclables to earn a few rupees a day. It was scorching noon when she bent down to pick up what looked like a regular water bottle. Parched from the heat, she was about to open it when it slipped and burst open. It wasn't water — it was acid, discarded recklessly by a nearby chemical factory. The liquid splashed across her right hand and forearm. Within seconds, her skin began to sizzle, bubble, and peel away. She screamed in agony, falling to her knees as others stared helplessly. There was no ambulance. No one knew first aid. Someone poured muddy water on her burns and wrapped them with plastic. When she was taken to a local clinic, they demanded ₹1,500 for even basic care. She didn't have a rupee. They turned her away. Asha now hides her disfigured hand under a scarf. The burns healed into scarred, twisted flesh, making it hard to hold even a scrap hook. But just one week later, she returned to the dump. 'My little brother needs to eat,' she said. 'My pain doesn't matter.' She dreams of becoming a tailor one day — using the same hand that was taken from her by another's carelessness.",
+      "image": "/journal/6.jpeg",
+      "date": "2025-06-14",
+      "tags": ["industrial-waste", "healthcare", "sacrifice", "dreams"]
+    },
+    {
+      "id": 5,
+      "slug": "imran-boy-with-one-eye",
+      "title": "Imran – Boy with One Eye",
+      "content": "Imran was just ten when his childhood was shattered by a glint of light beneath a rusted sheet at a dump yard in Hyderabad. Thinking it was a coin or toy, he reached for it eagerly. But it was the jagged neck of a broken liquor bottle. As he pulled it out, the sharp edge tore across his cheek and into his right eye. The pain was immediate, unbearable. He screamed and fell, blood soaking the trash beneath him. Nearby ragpickers rushed over and tried to stop the bleeding with their shirts. He was taken to a local clinic, but it was too late — the damage was permanent. Imran lost his eye. There was no compensation, no insurance, no justice. Now 12, Imran moves silently through the same garbage heaps. His face bears a long scar, and the hollow space where his eye once was is hidden behind a torn cloth. People call him names, children stare or laugh. He avoids mirrors. Once, a photographer asked him if he had a dream. Imran whispered, 'I used to want to be a policeman — wear a big cap, catch thieves. But now, even little kids run when they see me.' Despite everything, he works every day. For his younger sister's schoolbooks.",
+      "image": "/journal/5.jpeg",
+      "date": "2025-06-14",
+      "tags": ["disability", "discrimination", "family-love", "sacrifice"]
+    },
+    {
+      "id": 6,
+      "slug": "sita-girl-who-never-smiled",
+      "title": "Sita – The Girl Who Never Smiled",
+      "content": "Sita is 13, but her tiny frame and sunken eyes make her look younger. Born in a slum beside a toxic black drain in Kolkata, her life has been defined by abandonment and survival. Her father vanished when she was just two. Her mother, paralyzed in one leg from an untreated infection, begs near a railway crossing, dragging herself on the ground with a begging bowl. Sita started ragpicking at age 6. Too small to carry a sack, she tied it to a string and dragged it behind her like a wounded pet. She's never owned a book, never sat in a classroom, never held a doll. Her bare feet are used to stepping over broken syringes and rotting food. She doesn't flinch anymore. Each day, her only ambition is to collect enough plastic to earn ₹20 — just enough for rice and a handful of salt. Her arms are always scratched, her nose running, her hair matted with dust. She has never tasted chocolate or seen the inside of a cinema. A volunteer once asked her, 'Why don't you ever smile?' Sita looked up, eyes blank and voice cold: 'Smiles are for those who eat three times.'",
+      "image": "/journal/4.jpeg",
+      "date": "2025-06-14",
+      "tags": ["childhood-lost", "survival", "education", "basic-needs"]
+    },
+    {
+      "id": 7,
+      "slug": "radha-baby-on-her-back",
+      "title": "Radha – The Baby on Her Back",
+      "content": "Radha is just 16, yet life has made her far older. She became a wife at 14, a widow at 15, and a mother by 16. Her husband, also a ragpicker, died of heatstroke while collecting waste under the blazing sun near a landfill in Chennai. There was no funeral, no doctor, just a shallow grave dug by his friends. She gave birth alone in a tarpaulin tent, using rags and boiling water heated over trash. Four days later, with blood still spotting her clothes, she returned to the landfill — this time with her baby girl tied to her back with an old towel. As she picks through mounds of rotting waste, the infant sleeps, coughs, and breathes in the same poisonous fumes. Sometimes, Radha hums lullabies to distract her from the acrid stench of burning plastic. She skips meals to buy baby wipes, though she uses torn cloth most days. One afternoon, a sudden fire tore through the landfill. Flames licked the sky, and black smoke swallowed the air. Radha ran barefoot across melting plastic, clutching her screaming child. The soles of her feet blistered, but she didn't stop. 'My daughter was born in garbage,' Radha says, her eyes fixed on the smoke. 'I just pray she doesn't die in it.'",
+      "image": "/journal/3.jpeg",
+      "date": "2025-06-14",
+      "tags": ["motherhood", "widowhood", "next-generation", "hope"]
+    },
+    {
+      "id": 8,
+      "slug": "pappu-child-addict",
+      "title": "Pappu – The Child Addict",
+      "content": "Pappu was 8 when he began ragpicking in the streets of Patna. With a torn T-shirt and oversized slippers, he would sing old Bhojpuri songs while digging through garbage heaps. His laughter echoed across alleyways — until the hunger began to overpower the music. With no food for days, Pappu would faint on the street. One afternoon, a group of older ragpickers gave him a rag soaked in glue. 'Smell this,' they said, 'you'll forget you're hungry.' He sniffed it. And forgot everything — the hunger, the pain, the loneliness. By the age of 12, Pappu was a ghost of his former self. His teeth were brown and decayed. His eyes were red and vacant. He would laugh at nothing, talk to walls, and sleep on sharp metal scraps as if they were pillows. His once playful voice had turned into incoherent mumbling. Several NGOs tried to help. They gave him food, medicine, even shelter. But every time, he slipped away — back to the dump, back to the glue. 'Out there, I feel more alone,' he once said. 'Here, even the trash talks to me.' Now, Pappu roams the landfill with a glue-soaked rag in one hand and a sack in the other — his world a blur of fumes, fantasies, and forgotten dreams.",
+      "image": "/journal/2.jpeg",
+      "date": "2025-06-14",
+      "tags": ["addiction", "child-abuse", "mental-health", "lost-childhood"]
+    },
+    {
+      "id": 9,
+      "slug": "shyam-boy-who-wanted-to-be-pilot",
+      "title": "Shyam – The Boy Who Wanted to Be a Pilot",
+      "content": "Shyam is 11, but in his heart, he dreams like a child still untouched by reality. Living near a dump yard in Lucknow, he works with his mother every day — collecting bottles, wires, and old wrappers from the trash. What sets Shyam apart is his fascination with the sky. Every time an airplane flies overhead, he stops and stares, eyes wide with wonder. One day, he picked up broken plastic pieces, shaped wings from them, and built a small toy plane. He ran around the garbage field, holding it high, making sounds like an engine. That evening, he asked his mother, 'Can I become a pilot someday?' She didn't answer immediately. Her hands, cracked and coated with mud, paused over a pile of old newspapers. After a long silence, she looked at him and said softly, 'Only if you're born again in a rich home.' Shyam was quiet. That night, he dug a shallow hole near their tent and buried the toy plane he had made. The next morning, he walked into the landfill barefoot again. His feet were cut by glass, but he didn't flinch. He no longer looked at the sky. A dream had died — quietly, like paper burning in wind.",
+      "image": "/journal/1.jpeg",
+      "date": "2025-06-14",
+      "tags": ["dreams", "class-divide", "aspiration", "social-mobility"]
+    }
+  ]
+}
