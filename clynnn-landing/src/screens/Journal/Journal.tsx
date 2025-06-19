@@ -143,7 +143,7 @@ export const Journal = (): JSX.Element => {
           {filteredEntries.map((entry, index) => (
             <Card 
               key={entry.id} 
-              className="glass-card hover:bg-gray-600/90 transition-all duration-300 theme-shadow animate-fade-in-up overflow-hidden group"
+              className="glass-card hover:bg-gray-600/90 transition-all duration-300 theme-shadow animate-fade-in-up overflow-hidden group flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="aspect-w-16 aspect-h-9 overflow-hidden">
@@ -154,7 +154,7 @@ export const Journal = (): JSX.Element => {
                 />
               </div>
               
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center justify-between mb-3">
                   <span className="font-['Chronicle_Display-Semibold'] text-wei text-app-accent text-sm font-medium">
                     {formatDate(entry.date)}
@@ -166,10 +166,6 @@ export const Journal = (): JSX.Element => {
                     {entry.title}
                   </Link>
                 </h3>
-                
-                <p className="text-lg text-[#fff8f8] leading-relaxed font-['Chronicle_Display-Semibold'] text-gray-300 mb-4 line-clamp-3">
-                  {truncateContent(entry.content)}
-                </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {entry.tags.slice(0, 3).map((tag, tagIndex) => (
@@ -187,11 +183,13 @@ export const Journal = (): JSX.Element => {
                   )}
                 </div>
                 
-                <Link to={`/journal/${entry.slug}`}>
-                  <Button className="w-full bg-gradient-to-r from-app-accent to-emerald-400 text-black font-medium transition-colors">
-                    Read Story
-                  </Button>
-                </Link>
+                <div className="mt-auto">
+                  <Link to={`/journal/${entry.slug}`}>
+                    <Button className="w-full bg-gradient-to-r from-app-accent to-emerald-400 text-black font-medium transition-colors">
+                      Read Story
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           ))}
