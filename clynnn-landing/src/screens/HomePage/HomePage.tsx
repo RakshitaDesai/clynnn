@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Separator } from "../../components/ui/separator";
-import journalData from "../../../journal-entries.json";
 
 export const HomePage = (): JSX.Element => {
+  const [journalData, setJournalData] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   const carouselImages = [
     { src: "/carousel/carousel1.jpeg", text: "“Mountains of garbage rise as forests fall — nature’s balance is tipping, and so is our fate.”" },
     { src: "/carousel/carousel2.jpeg", text: "“That one bottle you didn’t recycle could live 450 years longer than you.”" },
@@ -18,6 +21,30 @@ export const HomePage = (): JSX.Element => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    const fetchJournalData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('/journal-entries.json');
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch journal data: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setJournalData(data);
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load journal data');
+        console.error('Error fetching journal data:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchJournalData();
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
     }, 5000);
@@ -26,9 +53,9 @@ export const HomePage = (): JSX.Element => {
   }, [carouselImages.length]);
 
   // Get the latest 2 journal entries sorted by date (most recent first)
-  const latestJournalEntries = journalData.journals
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 2);
+  const latestJournalEntries = journalData?.journals
+    ?.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    ?.slice(0, 2) || [];
 
   const socialIcons = [
     { alt: "Instagram", src: "/instagram.svg" },
@@ -320,7 +347,28 @@ export const HomePage = (): JSX.Element => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {latestJournalEntries.map((article, idx) => (
+            {isLoading ? (
+              <div className="col-span-full text-center py-8">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-app-accent mx-auto mb-4"></div>
+                <p className="text-gray-300 font-['Instrument_Serif']">Loading journal entries...</p>
+              </div>
+            ) : error ? (
+              <div className="col-span-full text-center py-8">
+                <p className="text-red-400 font-['Instrument_Serif'] mb-4">Error: {error}</p>
+                <Button 
+                  onClick={() => window.location.reload()} 
+                  variant="outline" 
+                  className="border-app-accent text-app-accent hover:bg-app-accent hover:text-black"
+                >
+                  Retry
+                </Button>
+              </div>
+            ) : latestJournalEntries.length === 0 ? (
+              <div className="col-span-full text-center py-8">
+                <p className="text-gray-300 font-['Instrument_Serif']">No journal entries available</p>
+              </div>
+            ) : (
+              latestJournalEntries.map((article: any, idx: number) => (
               <Card key={article.id} className="group bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-app-accent-200 hover:border-app-accent-500 shadow-xl hover:shadow-2xl hover:shadow-app-accent/10 transition-all duration-500 hover:scale-105 animate-scale-in-center overflow-hidden" style={{animationDelay: `${idx * 200}ms`}}>
                 <div className="relative overflow-hidden">
                   <img 
@@ -357,7 +405,8 @@ export const HomePage = (): JSX.Element => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            ))
+            )}
           </div>
           
           <div className="text-center mt-12">
