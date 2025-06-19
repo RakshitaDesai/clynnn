@@ -29,7 +29,7 @@ export const Navigation = (): JSX.Element => {
   };
 
   return (
-    <header className="w-full bg-bg/80 backdrop-blur-lg border-b border-app-accent-100 z-50 sticky top-0 animate-fade-in-down">
+    <header className="w-full bg-bg/95 sm:bg-bg/80 backdrop-blur-lg border-b border-app-accent-100 z-50 sticky top-0 animate-fade-in-down">
       <nav className="container flex items-center justify-between py-4 px-4 sm:py-6">
         <div className="flex items-center gap-2 animate-slide-in-left">
           <Link to="/" onClick={closeMobileMenu}>
@@ -37,7 +37,7 @@ export const Navigation = (): JSX.Element => {
               <div className="w-10 h-10 bg-gradient-to-r from-app-accent to-emerald-400 rounded-full flex items-center justify-center">
                 <span className="text-black font-bold text-lg">C</span>
               </div>
-              <span className="text-xl sm:text-3xl font-extrabold text-wei tracking-wide font-['Chronicle_Display-Semibold'] hover:scale-105 transition-transform duration-300 cursor-pointer">
+              <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-wei tracking-wide font-['Chronicle_Display-Semibold'] hover:scale-105 transition-transform duration-300 cursor-pointer">
                 Clynnn
               </span>
             </div>
@@ -45,12 +45,12 @@ export const Navigation = (): JSX.Element => {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex gap-2 xl:gap-4">
+        <ul className="hidden lg:flex gap-1 xl:gap-2 2xl:gap-4">
           {navLinks.map((link, index) => (
             <li key={link.text} className="animate-fade-in-down" style={{animationDelay: `${index * 100}ms`}}>
               <Link 
                 to={link.href} 
-                className={`relative px-4 py-2 rounded-full text-base xl:text-lg font-['Instrument_Serif'] transition-all duration-300 hover:scale-105 group ${
+                className={`relative px-3 xl:px-4 py-2 rounded-full text-sm xl:text-base 2xl:text-lg font-['Chronicle_Display-Semibold'] transition-all duration-300 hover:scale-105 group ${
                   isActive(link.href) 
                     ? "text-black bg-gradient-to-r from-app-accent to-emerald-400 shadow-lg" 
                     : "text-wei hover:text-app-accent hover:bg-app-accent-100"
@@ -108,7 +108,7 @@ export const Navigation = (): JSX.Element => {
       )}
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-bg to-slate-900 backdrop-blur-lg border-l border-app-accent-200 z-50 transform transition-transform duration-300 ${
+      <div className={`lg:hidden fixed top-0 right-0 h-full w-72 sm:w-80 max-w-[85vw] bg-gradient-to-b from-bg to-slate-900 backdrop-blur-lg border-l border-app-accent-200 z-50 transform transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="flex flex-col h-full">

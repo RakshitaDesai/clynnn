@@ -104,7 +104,7 @@ export const ContactUs = (): JSX.Element => {
                 <p className="text-lg text-gray-300 font-['Instrument_Serif']">We'll get back to you within 24 hours</p>
               </div>
               <Card className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-app-accent-200 hover:border-app-accent-500 transition-all duration-500">
-                <CardContent className="p-6 sm:p-8">
+                <CardContent className="p-6 sm:p-8" style={{paddingBottom: '20%'}}>
                   {submitStatus === 'success' && (
                     <div className="mb-6 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
                       <p className="text-green-400 font-semibold">✅ Message sent successfully! We'll get back to you soon.</p>

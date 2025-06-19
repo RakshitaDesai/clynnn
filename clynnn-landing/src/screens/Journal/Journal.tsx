@@ -188,7 +188,7 @@ export const Journal = (): JSX.Element => {
                 </div>
                 
                 <Link to={`/journal/${entry.slug}`}>
-                  <Button className="w-full bg-app-accent hover:bg-app-accent-800 text-black font-medium transition-colors">
+                  <Button className="w-full bg-gradient-to-r from-app-accent to-emerald-400 text-black font-medium transition-colors">
                     Read Story
                   </Button>
                 </Link>
