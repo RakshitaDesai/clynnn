@@ -1,11 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
+import { supabase } from "../../lib/supabase";
+
+interface JoinUsSubmission {
+  id?: string;
+  full_name: string;
+  email: string;
+  phone?: string;
+  organization?: string;
+  area_of_interest: string;
+  message?: string;
+  created_at?: string;
+  updated_at?: string;
+}
 
 export const JoinUs = (): JSX.Element => {
+  const [formData, setFormData] = useState<Omit<JoinUsSubmission, 'id' | 'created_at' | 'updated_at'>>({
+    full_name: '',
+    email: '',
+    phone: '',
+    organization: '',
+    area_of_interest: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const { error } = await supabase
+        .from('join_us_submissions')
+        .insert([formData]);
+
+      if (error) throw error;
+
+      setSubmitStatus('success');
+      setFormData({
+        full_name: '',
+        email: '',
+        phone: '',
+        organization: '',
+        area_of_interest: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -234,14 +295,18 @@ export const JoinUs = (): JSX.Element => {
             </div>
             <Card className="bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-app-accent-200 hover:border-app-accent-500 transition-all duration-500">
               <CardContent className="p-6 sm:p-8">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="fullName" className="text-gray-300 font-semibold">Full Name *</Label>
                       <Input 
                         id="fullName"
+                        name="full_name"
                         type="text"
                         placeholder="Enter your full name"
+                        value={formData.full_name}
+                        onChange={handleInputChange}
+                        required
                         className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400/20"
                       />
                     </div>
@@ -249,8 +314,12 @@ export const JoinUs = (): JSX.Element => {
                       <Label htmlFor="email" className="text-gray-300 font-semibold">Email *</Label>
                       <Input 
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
                         className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400/20"
                       />
                     </div>
@@ -260,8 +329,11 @@ export const JoinUs = (): JSX.Element => {
                       <Label htmlFor="phone" className="text-gray-300 font-semibold">Phone</Label>
                       <Input 
                         id="phone"
+                        name="phone"
                         type="tel"
                         placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400/20"
                       />
                     </div>
@@ -269,15 +341,25 @@ export const JoinUs = (): JSX.Element => {
                       <Label htmlFor="organization" className="text-gray-300 font-semibold">Organization/Institution</Label>
                       <Input 
                         id="organization"
+                        name="organization"
                         type="text"
                         placeholder="Enter your organization"
+                        value={formData.organization}
+                        onChange={handleInputChange}
                         className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400/20"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="interest" className="text-gray-300 font-semibold">Area of Interest *</Label>
-                    <select className="w-full bg-slate-800/50 border border-slate-600 text-white rounded-md px-3 py-2 focus:border-green-400 focus:ring-green-400/20">
+                    <select 
+                      id="interest"
+                      name="area_of_interest"
+                      value={formData.area_of_interest}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-slate-800/50 border border-slate-600 text-white rounded-md px-3 py-2 focus:border-green-400 focus:ring-green-400/20"
+                    >
                       <option value="">Select your area of interest</option>
                       <option value="internship">Internship Program</option>
                       <option value="volunteering">Volunteering</option>
@@ -290,12 +372,30 @@ export const JoinUs = (): JSX.Element => {
                     <Label htmlFor="message" className="text-gray-300 font-semibold">Message/Comments</Label>
                     <Textarea 
                       id="message"
+                      name="message"
                       placeholder="Tell us more about your interest and how you'd like to contribute..."
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-green-400 focus:ring-green-400/20 min-h-32 resize-none"
                     />
                   </div>
-                  <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/25">
-                    Submit Application
+                  {submitStatus === 'success' && (
+                    <div className="p-4 bg-green-500/20 border border-green-500 rounded-md text-green-400 text-sm">
+                      Thank you for your interest! We'll get back to you soon.
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="p-4 bg-red-500/20 border border-red-500 rounded-md text-red-400 text-sm">
+                      Something went wrong. Please try again.
+                    </div>
+                  )}
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
                   </Button>
                 </form>
               </CardContent>
