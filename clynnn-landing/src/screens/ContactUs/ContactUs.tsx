@@ -202,28 +202,28 @@ export const ContactUs = (): JSX.Element => {
                   {
                     icon: "💬",
                     title: "General Inquiries",
-                    email: "hello@clynnn.com",
+                    email: "clynnn.sust@gmail.com ",
                     description: "For general questions and information about our platform",
                     color: "from-blue-500 to-cyan-500"
                   },
                   {
                     icon: "🤝",
                     title: "Partnership Opportunities",
-                    email: "partnerships@clynnn.com",
+                    email: "clynnn.sust@gmail.com ",
                     description: "Interested in partnering with us? Let's explore collaboration opportunities",
                     color: "from-purple-500 to-pink-500"
                   },
                   {
                     icon: "🛠️",
                     title: "Technical Support",
-                    email: "support@clynnn.com",
+                    email: "clynnn.sust@gmail.com ",
                     description: "Need help with our platform? Our technical team is here to assist",
                     color: "from-green-500 to-emerald-500"
                   },
                   {
                     icon: "💼",
                     title: "Careers",
-                    email: "careers@clynnn.com",
+                    email: "clynnn.sust@gmail.com ",
                     description: "Join our team and help us build the future of waste management",
                     color: "from-orange-500 to-red-500"
                   }
@@ -270,7 +270,7 @@ export const ContactUs = (): JSX.Element => {
             {[
               {
                 city: "Mumbai",
-                address: "Tech Hub, Bandra Kurla Complex",
+                address: "Coming Soon!",
                 state: "Maharashtra",
                 type: "Headquarters",
                 icon: "🏢",
@@ -278,7 +278,7 @@ export const ContactUs = (): JSX.Element => {
               },
               {
                 city: "Bangalore",
-                address: "Innovation Center, Koramangala",
+                address: "Coming Soon!",
                 state: "Karnataka",
                 type: "Development Center",
                 icon: "💻",
@@ -286,7 +286,7 @@ export const ContactUs = (): JSX.Element => {
               },
               {
                 city: "Delhi",
-                address: "Business District, Connaught Place",
+                address: "Coming Soon!",
                 state: "New Delhi",
                 type: "Regional Office",
                 icon: "🏛️",

@@ -107,15 +107,6 @@ export const JoinUs = (): JSX.Element => {
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl leading-relaxed font-['Instrument_Serif'] animate-slide-in-up" style={{animationDelay: '200ms'}}>
             Join our mission to transform India's waste management landscape. Your career becomes a catalyst for environmental change, creating lasting impact for future generations.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-fade-in-up" style={{animationDelay: '400ms'}}>
-            <Button size="lg" className="bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold text-lg px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/25">
-              Explore Opportunities
-            </Button>
-            <Button variant="outline" size="lg" className="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300">
-              Learn More
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -492,10 +483,6 @@ export const JoinUs = (): JSX.Element => {
                         ))}
                       </div>
                     </div>
-                    <Button variant="ghost" className="w-full mt-4 text-app-accent hover:text-green-300 hover:bg-app-accent-100 group/btn">
-                      Learn More
-                      <span className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -547,17 +534,13 @@ export const JoinUs = (): JSX.Element => {
                   </Button>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">500K+</div>
-                    <div className="text-sm text-white/80">Tons Processed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">50+</div>
+                <div className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-white/20">
+                <div className="text-center">
+                    <div className="text-2xl font-bold text-white mb-1">10+</div>
                     <div className="text-sm text-white/80">Team Members</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white mb-1">10+</div>
+                    <div className="text-2xl font-bold text-white mb-1">5+</div>
                     <div className="text-sm text-white/80">Cities Planned</div>
                   </div>
                 </div>

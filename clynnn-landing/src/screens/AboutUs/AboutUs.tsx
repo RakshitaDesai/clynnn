@@ -189,15 +189,6 @@ export const AboutUs = (): JSX.Element => {
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl leading-relaxed font-['Instrument_Serif'] animate-slide-in-up" style={{animationDelay: '200ms'}}>
             India's first smart waste management platform that combines cutting-edge technology with community engagement to create cleaner, healthier cities across the nation.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-fade-in-up" style={{animationDelay: '400ms'}}>
-            <Button size="lg" className="bg-gradient-to-r from-app-accent to-emerald-400 text-black font-bold text-lg px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-app-accent/25">
-              Our Mission
-            </Button>
-            <Button variant="outline" size="lg" className="border-2 border-app-accent text-app-accent hover:bg-app-accent hover:text-black font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300">
-              Meet the Team
-            </Button>
-          </div>
         </div>
       </section>
 

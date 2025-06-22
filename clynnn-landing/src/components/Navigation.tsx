@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 
@@ -28,8 +28,43 @@ export const Navigation = (): JSX.Element => {
     setIsMobileMenuOpen(false);
   };
 
+  useEffect(() => {
+    const mainElement = document.querySelector('main');
+    const footerElement = document.querySelector('footer');
+    
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      if (mainElement) {
+        mainElement.style.filter = 'blur(6px)';
+        mainElement.style.transition = 'filter 0.3s ease';
+      }
+      if (footerElement) {
+        footerElement.style.filter = 'blur(6px)';
+        footerElement.style.transition = 'filter 0.3s ease';
+      }
+    } else {
+      document.body.style.overflow = 'unset';
+      if (mainElement) {
+        mainElement.style.filter = 'none';
+      }
+      if (footerElement) {
+        footerElement.style.filter = 'none';
+      }
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      if (mainElement) {
+        mainElement.style.filter = 'none';
+      }
+      if (footerElement) {
+        footerElement.style.filter = 'none';
+      }
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header className="w-full bg-bg/95 sm:bg-bg/80 backdrop-blur-lg border-b border-app-accent-100 z-50 sticky top-0 animate-fade-in-down">
+    <header className="w-full bg-bg/95 sm:bg-bg/80 backdrop-blur-lg border-b border-app-accent-100 sticky top-0 z-50 animate-fade-in-down">
       <nav className="container flex items-center justify-between py-4 px-4 sm:py-6">
         <div className="flex items-center gap-2 animate-slide-in-left">
           <Link to="/" onClick={closeMobileMenu}>
@@ -67,7 +102,7 @@ export const Navigation = (): JSX.Element => {
 
         <div className="flex items-center gap-3 sm:gap-4 animate-slide-in-right">
           {/* Desktop Account & Cart */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* <div className="hidden sm:flex items-center gap-3">
             <Button 
               variant="outline" 
               size="sm" 
@@ -87,7 +122,7 @@ export const Navigation = (): JSX.Element => {
                 0
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile Hamburger Menu */}
           <button
@@ -104,13 +139,20 @@ export const Navigation = (): JSX.Element => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 bg-black/50 z-40" onClick={closeMobileMenu}></div>
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/90 z-[55]" 
+          onClick={closeMobileMenu}
+          style={{
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)'
+          }}
+        ></div>
       )}
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed top-0 right-0 h-full w-72 sm:w-80 max-w-[85vw] bg-gradient-to-b from-bg to-slate-900 backdrop-blur-lg border-l border-app-accent-200 z-50 transform transition-transform duration-300 ${
+      <div className={`lg:hidden fixed top-0 right-0 h-full w-72 sm:w-80 max-w-[85vw] bg-slate-900/95 backdrop-blur-xl border-l border-app-accent-200 shadow-2xl z-[60] transform transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
+      }`} style={{maxWidth: 'min(85vw, 320px)'}}>
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-app-accent-200">
@@ -135,7 +177,7 @@ export const Navigation = (): JSX.Element => {
 
           {/* Mobile Navigation Links */}
           <ul className="flex flex-col py-6 px-4 space-y-2">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <li key={link.text}>
                 <Link 
                   to={link.href}
@@ -156,7 +198,7 @@ export const Navigation = (): JSX.Element => {
           </ul>
 
           {/* Mobile Menu Footer */}
-          <div className="mt-auto p-6 border-t border-app-accent-200">
+          {/* <div className="mt-auto p-6 border-t border-app-accent-200">
             <div className="space-y-4">
               <Button 
                 variant="outline" 
@@ -178,7 +220,7 @@ export const Navigation = (): JSX.Element => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

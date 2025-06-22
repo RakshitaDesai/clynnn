@@ -94,7 +94,7 @@ export const HomePage = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-x-hidden max-w-full">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[100vh] sm:min-h-[80vh] bg-gradient-to-br from-bg via-slate-900 to-bg overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--app-accent)_0%,transparent_50%)] opacity-10" />
@@ -107,7 +107,7 @@ export const HomePage = (): JSX.Element => {
               key={i}
               className="absolute w-2 h-2 bg-app-accent/30 rounded-full animate-bounce"
               style={{
-                left: `${20 + i * 15}%`,
+                left: `${15 + i * 12}%`,
                 top: `${30 + i * 10}%`,
                 animationDelay: `${i * 0.5}s`,
                 animationDuration: `${3 + i * 0.5}s`
@@ -116,7 +116,7 @@ export const HomePage = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="relative z-10 flex flex-col items-center gap-4 sm:gap-6 md:gap-8 py-12 sm:py-16 md:py-24 lg:py-32 px-4 max-w-6xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center gap-4 sm:gap-6 md:gap-8 py-8 sm:py-12 md:py-16 lg:py-20 px-4 max-w-6xl mx-auto">
           <div className="flex items-center gap-2 sm:gap-4 animate-fade-in-down">
             <Separator className="w-6 sm:w-12 h-0.5 bg-gradient-to-r from-transparent to-app-accent" />
             <span className="text-app-accent font-semibold text-xs sm:text-sm tracking-wider uppercase text-center">The Future of Waste Management</span>
@@ -133,15 +133,6 @@ export const HomePage = (): JSX.Element => {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl leading-relaxed font-['Instrument_Serif'] animate-slide-in-up px-4" style={{animationDelay: '200ms'}}>
             Join India's first smart waste management platform that combines cutting-edge technology with community engagement to create cleaner, healthier cities.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in-up w-full sm:w-auto px-4 sm:px-0" style={{animationDelay: '400ms'}}>
-            <Button size="lg" className="bg-gradient-to-r from-app-accent to-emerald-400 text-black font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-app-accent/25 w-full sm:w-auto">
-              Get Started Today
-            </Button>
-            <Button variant="outline" size="lg" className="border-2 border-app-accent text-app-accent hover:bg-app-accent hover:text-black font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 w-full sm:w-auto">
-              Watch Demo
-            </Button>
-          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -268,13 +259,13 @@ export const HomePage = (): JSX.Element => {
               {/* Navigation arrows */}
               <button 
                 onClick={() => setCurrentImageIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-black/50 hover:bg-app-accent-800 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-20"
+                className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-black/50 hover:bg-app-accent-800 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 z-20"
               >
                 <span className="text-white text-lg sm:text-xl">‹</span>
               </button>
               <button 
                 onClick={() => setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-black/50 hover:bg-app-accent-800 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-20"
+                className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-black/50 hover:bg-app-accent-800 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 z-20"
               >
                 <span className="text-white text-lg sm:text-xl">›</span>
               </button>
@@ -317,15 +308,6 @@ export const HomePage = (): JSX.Element => {
               <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 font-['Instrument_Serif'] leading-relaxed px-4 lg:px-0">
                 Our revolutionary mobile app is launching soon. Be the first to experience smart waste management with gamification, real-time tracking, and community rewards.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-4 lg:px-0">
-                <Button size="lg" className="bg-gradient-to-r from-app-accent to-emerald-400 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:scale-105 transition-all duration-300 group text-sm sm:text-base">
-                  <span>Watch Preview</span>
-                  <img src="/arrow-diagonal.svg" alt="Arrow right" className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-2 border-app-accent text-app-accent hover:bg-app-accent hover:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 text-sm sm:text-base">
-                  Notify Me
-                </Button>
-              </div>
             </div>
             <div className="flex-1 flex justify-center animate-slide-in-right">
               <div className="relative max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg">
