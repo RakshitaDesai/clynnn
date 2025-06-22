@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Separator } from "../../components/ui/separator";
@@ -176,7 +177,7 @@ export const HomePage = (): JSX.Element => {
       </section>
 
       {/* Social Links Section */}
-      <section className="py-8 sm:py-12 bg-gradient-to-r from-transparent via-app-accent/5 to-transparent">
+      {/* <section className="py-8 sm:py-12 bg-gradient-to-r from-transparent via-app-accent/5 to-transparent">
         <div className="container px-4">
           <div className="flex flex-col items-center gap-4 sm:gap-6">
             <h3 className="text-lg sm:text-xl text-gray-300 font-['Instrument_Serif'] text-center">Follow Our Journey</h3>
@@ -199,7 +200,7 @@ export const HomePage = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What We Do */}
       <section className="relative py-12 sm:py-16 md:py-24 bg-gradient-to-b from-slate-900/30 to-transparent overflow-hidden">
@@ -387,10 +388,12 @@ export const HomePage = (): JSX.Element => {
                       {article.content.substring(0, 120)}...
                     </p>
                     <div className="pt-4">
-                      <Button variant="ghost" className="p-0 h-auto text-app-accent hover:text-emerald-400 font-semibold group/btn">
-                        Read More 
-                        <span className="ml-1 group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
-                      </Button>
+                      <Link to={`/journal/${article.id}`}>
+                        <Button variant="ghost" className="p-0 h-auto text-app-accent hover:text-emerald-400 font-semibold group/btn">
+                          Read More 
+                          <span className="ml-1 group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
@@ -400,9 +403,11 @@ export const HomePage = (): JSX.Element => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="border-2 border-app-accent text-app-accent hover:bg-app-accent hover:text-black px-8 py-4 rounded-full transition-all duration-300">
-              View All Stories
-            </Button>
+            <Link to="/journal">
+              <Button size="lg" variant="outline" className="border-2 border-app-accent text-app-accent hover:bg-app-accent hover:text-black px-8 py-4 rounded-full transition-all duration-300">
+                View All Stories
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -519,9 +524,90 @@ export const HomePage = (): JSX.Element => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-gradient-to-r from-app-accent to-emerald-400 text-black font-bold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300">
-              Contact Support
-            </Button>
+            <Link to="/contact-us">
+              <Button size="lg" className="bg-gradient-to-r from-app-accent to-emerald-400 text-black font-bold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300">
+                Contact Support
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="relative py-16 sm:py-24 bg-gradient-to-r from-transparent via-app-accent/5 to-transparent">
+        <div className="container px-4">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-wei mb-4 font-['Chronicle_Display-Semibold']">
+              Get in Touch
+            </h2>
+            <p className="text-lg text-gray-300 font-['Instrument_Serif']">
+              Ready to join the waste management revolution?
+            </p>
+            <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-app-accent to-emerald-400 mx-auto mt-4 sm:mt-6 rounded-full"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="group bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-app-accent-200 hover:border-app-accent-500 p-8 hover:scale-105 transition-all duration-500 animate-slide-in-left">
+                <CardContent className="p-0 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-app-accent/10 to-emerald-400/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:from-app-accent group-hover:to-emerald-400 transition-all duration-300">
+                    <svg className="w-8 h-8 text-app-accent group-hover:text-black transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-app-accent mb-3 font-['Chronicle_Display-Semibold'] group-hover:text-emerald-400 transition-colors duration-300">
+                    Email Us
+                  </h3>
+                  <a 
+                    href="mailto:clynnn.sust@gmail.com" 
+                    className="text-gray-300 hover:text-app-accent transition-colors duration-300 font-['Instrument_Serif'] text-lg group-hover:text-white"
+                  >
+                    clynnn.sust@gmail.com
+                  </a>
+                </CardContent>
+              </Card>
+              
+              <Card className="group bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-app-accent-200 hover:border-app-accent-500 p-8 hover:scale-105 transition-all duration-500 animate-slide-in-right" style={{animationDelay: '100ms'}}>
+                <CardContent className="p-0 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-app-accent/10 to-emerald-400/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:from-app-accent group-hover:to-emerald-400 transition-all duration-300">
+                    <svg className="w-8 h-8 text-app-accent group-hover:text-black transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-app-accent mb-3 font-['Chronicle_Display-Semibold'] group-hover:text-emerald-400 transition-colors duration-300">
+                    Call Us
+                  </h3>
+                  <a 
+                    href="tel:+919036177597" 
+                    className="text-gray-300 hover:text-app-accent transition-colors duration-300 font-['Instrument_Serif'] text-lg group-hover:text-white"
+                  >
+                    +91 9036177597
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="text-center mt-12">
+              <p className="text-gray-300 font-['Instrument_Serif'] text-lg mb-6">
+                Follow us on social media for the latest updates
+              </p>
+              <div className="flex justify-center gap-6">
+                {socialIcons.map((social) => (
+                  <a 
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name} 
+                    className="group p-3 rounded-full bg-gradient-to-r from-app-accent/10 to-emerald-400/10 hover:from-app-accent hover:to-emerald-400 transition-all duration-300 hover:scale-110 text-gray-300 hover:text-black" 
+                  >
+                    <div className="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
+                      {social.svg}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
